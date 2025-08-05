@@ -1,0 +1,11 @@
+Layout
+
+Pages are route specific UI components
+
+A layout is UI that is shared between multiple pages in your app
+
+Think of it as a Header, Content, and Footer that always appear on the page
+
+-- Create Layouts --
+// Default export a React component from a layout.js or layout.tsx file
+// That component takes a children prop, which next.js will populate with your page content

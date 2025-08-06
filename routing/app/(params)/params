@@ -1,0 +1,5 @@
+For a given URL,
+
+params is a promise that resloves to an object containing the dynamic route paramteres (like id)
+
+searchParams is a promise that resolves to an object containing the query parameters (like filters and sorting)

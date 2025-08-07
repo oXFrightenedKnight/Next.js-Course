@@ -11,11 +11,11 @@ export default function ProductReview({
 }: {
   params: { productId: string; reviewId: string }; // ✅ убрали Promise
 }) {
-  const random = getRandomInt(5);
+  //const random = getRandomInt(5);
 
-  if (random === 1) {
-    throw new Error("Error loading");
-  }
+  //if (random === 1) {
+  //throw new Error("Error loading");
+  //}
 
   const { productId, reviewId } = params;
 

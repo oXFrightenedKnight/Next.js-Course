@@ -4,8 +4,10 @@
 // Page.tsx becomes the child of layout.tsx when layout is rendered
 
 // Children prop is all of your components in the app folder.
+import "./globals.css"; // ✅ только здесь
 
 import { Metadata } from "next";
+import { ErrorWrapper } from "./error-wrapper";
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +28,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header>
           <p>Header</p>
         </header>
-        {children}
+        <ErrorWrapper>{children}</ErrorWrapper>
         <footer>
           <p>Footer</p>
         </footer>

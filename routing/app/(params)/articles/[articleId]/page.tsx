@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { useParams, useSearchParams } from "next/navigation"; // Use when working with client
 // const params = useParams();
 // const searchParams = useSearchParams();
@@ -9,15 +9,11 @@ import { useParams, useSearchParams } from "next/navigation"; // Use when workin
 
 import Link from "next/link";
 
-export default function NewsArticle({
-  params,
-  searchParams,
-}: {
-  params: { articleId: string };
-  searchParams: { lang?: "en" | "fr" };
-}) {
-  const { articleId } = params;
-  const { lang = "en" } = searchParams;
+export default function NewsArticleClient() {
+  const params = useParams(); // доступно на клиенте
+  const searchParams = useSearchParams();
+  const articleId = params.articleId;
+  const lang = searchParams.get("lang") ?? "en";
 
   return (
     <div>

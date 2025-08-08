@@ -1,0 +1,5 @@
+export default function InterceptedF5() {
+  return <h1>(...) Intercepted F5</h1>;
+}
+
+// (...) match segments starting from the root app directory

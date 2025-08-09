@@ -16,3 +16,6 @@ export async function POST(request: Request) {
     status: 201,
   });
 }
+
+// GET - a way to read a file
+// POST - a way to add or update it

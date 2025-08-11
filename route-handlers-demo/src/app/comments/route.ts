@@ -1,7 +1,14 @@
+import { type NextRequest } from "next/server";
 import { comments } from "./data";
+import { NextURL } from "next/dist/server/web/next-url";
 
-export async function GET() {
-  return Response.json(comments);
+export async function GET(request: NextRequest) {
+  const searchParams = request.nextUrl.searchParams;
+  const query = searchParams.get("query");
+  const filteredComments = query
+    ? comments.filter((comment) => comment.text.includes(query))
+    : comments;
+  return Response.json(filteredComments);
 }
 
 export async function POST(request: Request) {
@@ -17,5 +24,7 @@ export async function POST(request: Request) {
   });
 }
 
-// GET - a way to read a file
-// POST - a way to add or update it
+// GET - a way to read an object
+// POST - a way to add or update object
+// PATCH - a way to update one or more properties of object
+// DELETE = a way to delete an object

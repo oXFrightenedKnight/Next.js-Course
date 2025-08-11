@@ -15,3 +15,11 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
   comments[i].text = text;
   return Response.json(comments[i]);
 }
+
+export async function DELETE(_request: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const i = comments.findIndex((comment) => comment.id === parseInt(id));
+  const deleted_comment = comments[i];
+  comments.splice(i, 1);
+  return Response.json(deleted_comment);
+}

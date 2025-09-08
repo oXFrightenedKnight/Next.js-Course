@@ -1,5 +1,6 @@
 "use client";
 import { useTheme } from "@/components/theme-provider";
+import { clientSideFunction } from "@/utils/client-utils";
 // import { serverSideFunction } from "@/utils/server-utils"; // this will throw an error
 //                                                            due to installed "server-only"
 // It protects your code and prevents accidental server code leaks to client side.
@@ -7,8 +8,14 @@ import { useTheme } from "@/components/theme-provider";
 export default function ClientRoutePage() {
   // const { result } = serverSideFunction();
   const theme = useTheme();
+  const result = clientSideFunction();
 
-  return <h1 style={{ color: theme.colors.primary }}>Client route</h1>;
+  return (
+    <>
+      <h1 style={{ color: theme.colors.primary }}>Client route</h1>
+      <p>{result}</p>
+    </>
+  );
 }
 
 // WARNING! If you try to use third-party packages on a server component it might break!
